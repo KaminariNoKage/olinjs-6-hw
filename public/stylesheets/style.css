@@ -31,7 +31,6 @@ a {
 /*Carousel and Comments*/
 #container{
 	float:left;
-	border:1px white solid;
 	max-width: 550px;
 	overflow: hidden;
 }

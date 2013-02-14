@@ -1,9 +1,8 @@
 $(document).ready(function(){
 	
 	var refreshindex = function(){
-		var active_img = $("#carousel").rcarousel("getCurrentPage").attr('id')
-			, curcom = '/comments/:' + active_img;
-		$.get(curcom, function(html){
+		//FIND SOME WAY OF GETTING ACTIVE CAROUSEL ID
+		$.get('/comments/:curcom', function(html){
 			$('#commentlist').replaceWith(html);
 		});
 	};

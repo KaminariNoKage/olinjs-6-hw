@@ -67,7 +67,8 @@ exports.logout = function(req, res){
 
 exports.friends = function(req, res){
 	req.facebook.api('/me/friends', function(err, data) {
-		res.send(data);
+		//Do stuff here to get pictures!
+		req.send(data);
 	});
 };
 

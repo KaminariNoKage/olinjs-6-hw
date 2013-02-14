@@ -55,9 +55,6 @@ $(document).ready(function(){
 		step: 1
 	});
 
-	var temp = $("#carousel").rcarousel("getCurrentPage");
-	console.log(temp);
-
 	$("#next").click(function(){
 		$( "#carousel" ).rcarousel( "next" );
 	});
