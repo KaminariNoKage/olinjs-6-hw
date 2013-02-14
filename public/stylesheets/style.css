@@ -1,0 +1,58 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+#logo {
+	display: inline-block;;
+	vertical-align: top;
+	padding-right: 30px;
+}
+
+#textstuff{
+	display: inline-block;
+	vertical-align: top;
+	max-width: 400px;
+}
+
+#namehead{
+	border-bottom: solid 2px black;
+}
+
+#main_left{
+	float: left;
+	margin-right:100px;
+}
+
+/*Carousel and Comments*/
+#container{
+	float:left;
+	border:1px white solid;
+	max-width: 550px;
+	overflow: hidden;
+}
+
+#carousel {
+	margin-left: 50px;
+	margin-right: 50px;
+}
+
+#carousel{
+	text-align: center;
+}
+
+#new_comment{
+	width:400px;
+	height: 50px;
+	max-width: 400px;
+	max-height:50px;
+	margin:10px 50px 10px 50px;
+}
+
+#next, #subcom{
+	float: right;
+}
