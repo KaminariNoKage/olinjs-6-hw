@@ -52,7 +52,6 @@ app.get('/myhome', facebookGetUser(), user.myhome);
 app.get('/login', Facebook.loginRequired({ scope: ['user_photos', 'friends_photos', 'publish_stream']}), user.login);
 app.get('/logout', facebookGetUser(), user.logout);
 app.get('/friends', facebookGetUser(), user.friends);
-app.get('/comments/:curid', facebookGetUser(), user.commentlist);
 
 app.post('/update', user.update);
 app.post('/newcomment', user.newcom);

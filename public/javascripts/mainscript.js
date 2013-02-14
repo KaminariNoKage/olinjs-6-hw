@@ -49,7 +49,7 @@ $(document).ready(function(){
 
 	$( "#carousel" ).rcarousel({
 		width: 400, 
-		height: 400,
+		height: 600,
 		speed: 500,
 		visible: 1,
 		step: 1
@@ -63,7 +63,7 @@ $(document).ready(function(){
 		$( "#carousel" ).rcarousel( "prev" );
 	});
 
-	$("#subcom").click(function(){
+	$(".subcom").click(function(){
 		var newmess = $("#new_comment").val()
 			, img_id = $("#carousel").rcarousel("getCurrentPage").attr('id');
 		console.log($("#new_comment").val());

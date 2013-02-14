@@ -84,9 +84,3 @@ exports.newcom = function(req,res){
 		res.send('Success');
 	});
 };
-
-exports.commentlist = function(req,res){
-	Comment.find({img_id: req.params.curid}).sort('-time').exec(function(err, foundComments){
-		res.render('_comments', {commentlist: foundComments});
-	});
-};
