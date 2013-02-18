@@ -64,15 +64,10 @@ $(document).ready(function(){
 	});
 
 	$(".subcom").click(function(){
-		var newmess = $("#new_comment").val()
-			, img_id = $("#carousel").rcarousel("getCurrentPage").attr('id');
-		console.log($("#new_comment").val());
-		if (newmess.length > 500) {
-			alert("Please keep your comment under 500 characters.");
-		}
-		else {
-			$.post("/newcomment", {imgid: img_id, newcom: $("#new_comment").val()});
-		};
+		var imgid = $('.subcom').attr('id')
+			, class_adj = "." + imgid
+			, message = $(class_adj).val();
+		$.post("/newcomment", {id: imgid, message: message});
 		return false;
 	});
 

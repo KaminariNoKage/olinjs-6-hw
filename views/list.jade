@@ -3,6 +3,6 @@ extends layout
 block content
 	h1 List of All Facebook IDs
 	div
-	each id, i in idlist
+	each photo, i in idlist
 		div(value=id) 
-			| #{id.fb_id}
+			| #{photo.id}

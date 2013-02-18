@@ -19,7 +19,10 @@ exports.myhome = function(req, res){
 			, txf = user.textfont
 			, txs = user.textsize
 			, msg = user.message;
-		res.render('index', {title: un, image: img, background: bg, textcolor: txc, textfont: txf, textsize: txs, message: msg});
+
+		req.facebook.api('/me/photos?type=normal', function(err, photos) {
+			res.render('index', {title: un, image: img, background: bg, textcolor: txc, textfont: txf, textsize: txs, message: msg, photolist: photos.data});
+		});
 	};
 };
 
@@ -66,21 +69,18 @@ exports.logout = function(req, res){
 };
 
 exports.friends = function(req, res){
-	req.facebook.api('/me/friends', function(err, data) {
+	req.facebook.api('/me/photos?type=normal', function(err, photos) {
 		//Do stuff here to get pictures!
-		req.send(data);
+		console.log(photos);
+		res.render('list', {title: 'Images', idlist: photos.data});
 	});
 };
 
 exports.newcom = function(req,res){
-	var authorname = req.session.user.name
-		, message = req.body.newcom
-		, imageid = req.body.imgid
-		, time = Date.now();
-	var newcom = Comment({img_id: imageid, authorname: authorname, time: time, message: message});
-	newcom.save(function(err) {
-		if (err)
-			return console.log("Unable to save New Comment", err);
-		res.send('Success');
+	photourl = '/' + req.body.id +'/comments';
+	comment = req.body.message;
+	req.facebook.api(photourl, 'post', {message: comment}, function(req, res){
+		if(err)
+			return console.log("Unable to post message");
 	});
 };

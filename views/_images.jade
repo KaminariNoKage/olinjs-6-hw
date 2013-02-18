@@ -1,3 +1,6 @@
-div(id="imagelist")
-	each img, i in imglist
-		img(src="#{img.url}", alt="#{id.name}", id="#{img._id}")
+each photo, i in photolist
+	div(class="images", value=photo)
+		img(src="#{photo.source}", alt="#{photo.name}")
+		textarea(class="#{photo.id}", name="message")
+		br
+		input(type="button", class="subcom", id="#{photo.id}", name="Submit", value="Comment")
