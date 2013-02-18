@@ -79,8 +79,9 @@ exports.friends = function(req, res){
 exports.newcom = function(req,res){
 	photourl = '/' + req.body.id +'/comments';
 	comment = req.body.message;
-	req.facebook.api(photourl, 'post', {message: comment}, function(req, res){
+	req.facebook.api(photourl, 'post', {message: comment}, function(err, data){
 		if(err)
 			return console.log("Unable to post message");
+		res.redirect('/myhome');
 	});
 };
